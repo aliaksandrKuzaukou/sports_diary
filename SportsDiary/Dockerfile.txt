@@ -1,12 +1,12 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
-WORKDIR /SportsDiary
+WORKDIR ./SportsDiary
 
 COPY SportsDiary/*.sln .
 COPY SportsDiary/*.csproj ./SportsDiary/
 RUN dotnet restore
 
 COPY SportsDiary/. ./SportsDiary/
-WORKDIR /SportsDiary/SportsDiary
+WORKDIR ./SportsDiary/SportsDiary
 RUN dotnet publish -c Release -o /app --no-restore
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
