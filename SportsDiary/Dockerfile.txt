@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /sports_diary
 
-COPY ..
+COPY . .
 RUN dotnet restore "./SportsDiary/SportsDiary.csprog" --disable-parallel
 RUN dotnet publish "./SportsDiary/SportsDiary.csprog" -c Release -o /app --no-restore
 
