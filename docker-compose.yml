@@ -1,0 +1,13 @@
+version: '1'
+services:
+  playground-web-frontend:
+    image: sports-diary-frontend:latest
+    environment:
+      PORT: 3000
+      PROXY_API: http://sports-diary-backend:8080/
+    ports:
+      - 3000:3000
+  playground-web-backend:
+    image: sports-diary-backend:latest
+    ports:
+      - 8080:8080
