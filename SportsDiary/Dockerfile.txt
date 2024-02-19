@@ -8,5 +8,5 @@ RUN dotnet publish "./SportsDiary/SportsDiary.csproj" -c Release -o /app --no-re
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build-env /app ./
-EXPOSE 5000
+EXPOSE 80
 ENTRYPOINT ["dotnet", "SportsDiary.dll"]
